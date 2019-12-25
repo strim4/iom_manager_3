@@ -2802,7 +2802,7 @@ study: '',
         data: {
           
         },
-        url: `http://localhost:8081/protocols/${casenr}`,
+        url: `/protocols/${casenr}`,
         headers: {
           Authorization: `JWT ${token}`,
           'Content-Type': 'application/json',
@@ -2868,7 +2868,7 @@ study: '',
             file: this.file.name,
             
           },
-          url: 'http://localhost:8081/completcase',
+          url: '/completcase',
           headers: {
             Authorization: `JWT ${token}`,
             'Content-Type': 'application/json',
@@ -2930,7 +2930,7 @@ submitFile(){
   let formData = new FormData();
   formData.append('file', this.file);
 const token = window.localStorage.getItem('auth');
-  axios.post( 'http://localhost:8081/upload',
+  axios.post( '/upload',
   formData,
   {
     headers: {

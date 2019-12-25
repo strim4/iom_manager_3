@@ -2833,7 +2833,7 @@ this.dialogEval = true;
         data: {
           name: this.categories,
         },
-        url: 'http://localhost:8081/categories',
+        url: '/categories',
          headers: {
             Authorization: `JWT ${token}`,
             'Content-Type': 'application/json',
@@ -2875,7 +2875,7 @@ this.dialogEval = true;
             extras: this.extras,
             closing: this.closing,
           },
-          url: 'http://localhost:8081/protocols',
+          url: '/protocols',
           headers: {
             Authorization: `JWT ${token}`,
             'Content-Type': 'application/json',
@@ -2911,7 +2911,7 @@ this.dialogEval = true;
         data: {
           id,
         },
-        url: `http://localhost:8081/cases/${id}`,
+        url: `/cases/${id}`,
         headers: {
           Authorization: `JWT ${token}`,
           'Content-Type': 'application/json',
@@ -2932,7 +2932,7 @@ this.dialogEval = true;
         data: {
           id,
         },
-        url: `http://localhost:8081/cases/${id}`,
+        url: `/cases/${id}`,
         headers: {
           Authorization: `JWT ${token}`,
           'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 // travis.yml
 language: node_js
 node_js:
-- ">= 6.0.0"
+- "8.12.0"
 before_script:
 - npm install

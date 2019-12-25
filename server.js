@@ -34,6 +34,8 @@ const edfName = '';
 //tell express to use the imported modules
 const app = express();
 const router = express.Router();
+const serveStatic = require('serve-static');
+const history = require('connect-history-api-fallback');
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
@@ -43,7 +45,7 @@ app.use(passport.initialize());
 
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/iom_manager', function() {
+mongoose.connect('mongodb+srv://iommanager:Dezember2019@cluster0-vjmex.mongodb.net/test?retryWrites=true&w=majority', function() {
 console.log('Connection has been made');
 })
 .catch(err => {
@@ -58,6 +60,8 @@ fs.readdirSync("controllers").forEach(function (file) {
     route.controller(app)
     }
     })
+    app.use(history());
+    app.use(serveStatic(__dirname + "/dist"));
 
 router.get('/', function(req, res) {
 res.json({ message: 'API Initialized!'});
@@ -126,7 +130,7 @@ function isLoggedIn(req, res, next) {
 };
 
 //Tell express server to use port 8081
-const port = process.env.API_PORT || 8081;
+const port = process.env.PORT || 8081;
 app.use('/', router);
 app.listen(port, function() {
 console.log(`api running on port ${port}`);

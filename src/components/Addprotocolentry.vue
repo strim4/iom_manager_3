@@ -122,7 +122,7 @@ export default {
             name: this.event,
             options: this.option,
           },
-          url: 'http://localhost:8081/categories',
+          url: '/categories',
           headers: {
             Authorization: `JWT ${token}`,
             'Content-Type': 'application/json',
@@ -160,7 +160,7 @@ export default {
         data: {
           name: this.categories,
         },
-        url: 'http://localhost:8081/categories',
+        url: '/categories',
          headers: {
             Authorization: `JWT ${token}`,
             'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ export default {
         data: {
           id,
         },
-        url: `http://localhost:8081/categories/${id}`,
+        url: `/categories/${id}`,
         headers: {
           Authorization: `JWT ${token}`,
           'Content-Type': 'application/json',
